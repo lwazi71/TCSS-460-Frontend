@@ -11,7 +11,7 @@
 ### Contribution
 
 - **Jacob Klymenko** – Wrote the `README.md` and participated with project discussion.
-- **Lwazi M Mabota** – Set up the web app and successfully deployed it to Heroku.
+- **Lwazi M Mabota** – Set up the web app and successfully deployed it to Vercel.
 - **Thomas Le** – Participated with project discussion on tasks and goals.
 - **Owen Orlic** – Acted as the team lead discussing tasks and goals.
 
