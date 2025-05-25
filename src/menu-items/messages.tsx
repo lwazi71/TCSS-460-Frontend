@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import MessageOutlined from '@ant-design/icons/MessageOutlined';
 import EmailIcon from '@mui/icons-material/Email';
 import SendIcon from '@mui/icons-material/Send';
+//import BooksIcon from '@mui/icons-material/LibraryBooks';
 
 // type
 import { NavItemType } from 'types/menu';
@@ -37,6 +38,21 @@ const pages: NavItemType = {
           title: <FormattedMessage id="view-messages" />,
           type: 'item',
           url: '/messages/list',
+          icon: icons.EmailIcon
+        }
+      ]
+    },
+    {
+      id: 'books',
+      title: <FormattedMessage id="books" />,
+      type: 'collapse',
+      icon: icons.MessageOutlined,
+      children: [
+        {
+          id: 'view-books',
+          title: <FormattedMessage id="view-books" />,
+          type: 'item',
+          url: '/books/list',
           icon: icons.EmailIcon
         }
       ]
