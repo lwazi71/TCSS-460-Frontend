@@ -13,5 +13,7 @@
   "sample-page": "Sample Page",
   "send-message": "Send Message",
   "under-construction": "Under Construction",
-  "view-messages": "View Messages"
+  "view-messages": "View Messages",
+  "account": "Account",
+  "change-password": "Change Password"
 }

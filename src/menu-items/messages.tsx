@@ -5,12 +5,13 @@ import { FormattedMessage } from 'react-intl';
 import MessageOutlined from '@ant-design/icons/MessageOutlined';
 import EmailIcon from '@mui/icons-material/Email';
 import SendIcon from '@mui/icons-material/Send';
+import VpnKeyIcon from '@mui/icons-material/VpnKey'; // ✅ added for Change Password icon
 
 // type
 import { NavItemType } from 'types/menu';
 
 // icons
-const icons = { MessageOutlined, EmailIcon, SendIcon };
+const icons = { MessageOutlined, EmailIcon, SendIcon, VpnKeyIcon };
 
 // ==============================|| MENU ITEMS - PAGES ||============================== //
 
@@ -38,6 +39,21 @@ const pages: NavItemType = {
           type: 'item',
           url: '/messages/list',
           icon: icons.EmailIcon
+        }
+      ]
+    },
+    {
+      id: 'account',
+      title: <FormattedMessage id="account" />,
+      type: 'collapse',
+      icon: icons.VpnKeyIcon,
+      children: [
+        {
+          id: 'change-password',
+          title: <FormattedMessage id="change-password" />,
+          type: 'item',
+          url: '/change-password',
+          icon: icons.VpnKeyIcon
         }
       ]
     }

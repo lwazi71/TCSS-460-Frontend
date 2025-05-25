@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const ChangePasswordForm = () => {
   const [formData, setFormData] = useState({
@@ -17,11 +17,10 @@ const ChangePasswordForm = () => {
   const validate = () => {
     const newErrors = {};
 
-    if (!formData.userName) newErrors.userName = "Username is required";
-    if (!formData.currentPassword) newErrors.currentPassword = "Current password is required";
-    if (!formData.newPassword) newErrors.newPassword = "New password is required";
-    if (formData.newPassword !== formData.confirmPassword)
-      newErrors.confirmPassword = "Passwords do not match";
+    if (!formData.userName) newErrors.userName = 'Username is required';
+    if (!formData.currentPassword) newErrors.currentPassword = 'Current password is required';
+    if (!formData.newPassword) newErrors.newPassword = 'New password is required';
+    if (formData.newPassword !== formData.confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
