@@ -44,7 +44,7 @@ const other: NavItemType = {
       id: 'documentation',
       title: <FormattedMessage id="documentation" />,
       type: 'item',
-      url: 'https://uwt-set-tcss460-lecture-materials.github.io/TCSS460-phase-2/',
+      url: 'https://abomhold.github.io/TCSS460-phase-2/',
       icon: icons.QuestionOutlined,
       external: true,
       target: true
