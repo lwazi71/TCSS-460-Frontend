@@ -1,21 +1,13 @@
 // next
+import { random } from 'lodash';
 import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 // project import
 import axios from 'utils/axios';
 
-function getRandomInt(min: number, max: number) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function getRandomPhoneNumber() {
-  const areaCode = getRandomInt(100, 999);
-  const centralOfficeCode = getRandomInt(100, 999);
-  const lineNumber = getRandomInt(1000, 9999);
-  return `${areaCode}-${centralOfficeCode}-${lineNumber}`;
+const randomRole = (): number => {
+  return Math.floor(Math.random() * 5) + 1;
 }
 
 export const authOptions: NextAuthOptions = {
@@ -50,8 +42,9 @@ export const authOptions: NextAuthOptions = {
       credentials: {
         firstname: { name: 'firstname', label: 'First Name', type: 'text', placeholder: 'Enter First Name' },
         lastname: { name: 'lastname', label: 'Last Name', type: 'text', placeholder: 'Enter Last Name' },
+        username: { name: 'username', label: 'Username', type: 'text', placeholder: 'Enter Username' },
         email: { name: 'email', label: 'Email', type: 'email', placeholder: 'Enter Email' },
-        company: { name: 'company', label: 'Company', type: 'text', placeholder: 'Enter Company' },
+        phone: { name: 'phone', label: 'Phone Number', type: 'text', placeholder: 'Enter Phone Number' },
         password: { name: 'password', label: 'Password', type: 'password', placeholder: 'Enter Password' }
       },
       async authorize(credentials) {
@@ -59,12 +52,11 @@ export const authOptions: NextAuthOptions = {
           const user = await axios.post('/register', {
             firstname: credentials?.firstname,
             lastname: credentials?.lastname,
-            company: credentials?.company,
+            username: credentials?.username,
             password: credentials?.password,
             email: credentials?.email,
-            role: 1,
-            username: credentials?.email,
-            phone: getRandomPhoneNumber() // TODO request phone number from user
+            phone: credentials?.phone,
+            role: randomRole(),
           });
 
           if (user) {
