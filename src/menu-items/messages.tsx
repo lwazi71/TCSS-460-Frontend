@@ -5,13 +5,16 @@ import { FormattedMessage } from 'react-intl';
 import MessageOutlined from '@ant-design/icons/MessageOutlined';
 import EmailIcon from '@mui/icons-material/Email';
 import SendIcon from '@mui/icons-material/Send';
-import VpnKeyIcon from '@mui/icons-material/VpnKey'; // ✅ added for Change Password icon
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
 
 // type
 import { NavItemType } from 'types/menu';
 
 // icons
-const icons = { MessageOutlined, EmailIcon, SendIcon, VpnKeyIcon };
+const icons = { MessageOutlined, EmailIcon, SendIcon, MenuBookIcon, LibraryBooksIcon, VpnKeyIcon };
+
 
 // ==============================|| MENU ITEMS - PAGES ||============================== //
 
@@ -43,6 +46,21 @@ const pages: NavItemType = {
       ]
     },
     {
+      id: 'books',
+      title: <FormattedMessage id="books" />,
+      type: 'collapse',
+      icon: icons.MenuBookIcon,
+      children: [
+        {
+          id: 'view-books',
+          title: <FormattedMessage id="view-books" />,
+          type: 'item',
+          url: '/books/list',
+          icon: icons.LibraryBooksIcon
+        }
+      ]
+    },
+    {
       id: 'account',
       title: <FormattedMessage id="account" />,
       type: 'collapse',
@@ -54,6 +72,7 @@ const pages: NavItemType = {
           type: 'item',
           url: '/change-password',
           icon: icons.VpnKeyIcon
+
         }
       ]
     }
