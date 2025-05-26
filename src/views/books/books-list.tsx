@@ -57,6 +57,86 @@ const mockBooks: IBook[] = [
       large: 'https://images.gr-assets.com/books/1447303603m/2767052.jpg',
       small: 'https://images.gr-assets.com/books/1447303603s/2767052.jpg'
     }
+  },
+  {
+    isbn13: 9999999997,
+    authors: 'Stephenie Meyer',
+    publication: 1985,
+    original_title: 'fake3',
+    title: 'Twilight',
+    ratings: {
+      average: 3,
+      count: 5,
+      rating_1: 1,
+      rating_2: 1,
+      rating_3: 1,
+      rating_4: 1,
+      rating_5: 1
+    },
+    icons: {
+      large: 'https://images.gr-assets.com/books/1361039443m/41865.jpg',
+      small: 'https://images.gr-assets.com/books/1361039443s/41865.jpg'
+    }
+  },
+  {
+    isbn13: 9999999996,
+    authors: 'Harper Lee',
+    publication: 1985,
+    original_title: 'fake4',
+    title: 'To Kill a Mockingbird',
+    ratings: {
+      average: 3,
+      count: 5,
+      rating_1: 1,
+      rating_2: 1,
+      rating_3: 1,
+      rating_4: 1,
+      rating_5: 1
+    },
+    icons: {
+      large: 'https://images.gr-assets.com/books/1361975680m/2657.jpg',
+      small: 'https://images.gr-assets.com/books/1361975680s/2657.jpg'
+    }
+  },
+  {
+    isbn13: 9999999995,
+    authors: 'F. Scott Fitzgerald',
+    publication: 1985,
+    original_title: 'fake5',
+    title: 'The Great Gatsby',
+    ratings: {
+      average: 3,
+      count: 5,
+      rating_1: 1,
+      rating_2: 1,
+      rating_3: 1,
+      rating_4: 1,
+      rating_5: 1
+    },
+    icons: {
+      large: 'https://images.gr-assets.com/books/1490528560m/4671.jpg',
+      small: 'https://images.gr-assets.com/books/1490528560s/4671.jpg'
+    }
+  },
+  {
+    isbn13: 9999999994,
+    authors: 'John Green',
+    publication: 1985,
+    original_title: 'fake6',
+    title: 'The Fault in Our Stars',
+    ratings: {
+      average: 3,
+      count: 5,
+      rating_1: 1,
+      rating_2: 1,
+      rating_3: 1,
+      rating_4: 1,
+      rating_5: 1
+    },
+    icons: {
+      large: 'https://images.gr-assets.com/books/1360206420m/11870085.jpg',
+      small: 'https://images.gr-assets.com/books/1360206420s/11870085.jpg'
+    }
   }
 ];
 
