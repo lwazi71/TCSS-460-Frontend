@@ -52,10 +52,6 @@ export default function AuthRegister({ providers, csrfToken }: any) {
 
   const phoneRegExp: RegExp = /^(\+?\d{1,3}[-.\s]?|\()?\d{3}[-.\s]?\d{3}[-.\s]?\d{4}$/;
 
-  const randomRole = (): number => {
-    return Math.floor(Math.random() * 5) + 1;
-  }
-
   const changePassword = (value: string) => {
     const temp = strengthIndicator(value);
     setLevel(strengthColor(temp));
@@ -101,7 +97,7 @@ export default function AuthRegister({ providers, csrfToken }: any) {
             username: values.username,
             email: trimmedEmail,
             phone: values.phonenumber,
-            role: randomRole(),
+            role: 3, // default role in the middle
             password: values.password,
             callbackUrl: APP_DEFAULT_PATH
           }).then((res: any) => {

@@ -23,3 +23,23 @@
 ### Comments
 
 - Setting up the web app to be hosted through Vercel was pretty straight forward.
+
+## Beta I Sprint
+
+### Contribution
+
+- **Jacob Klymenko** – Updated the register/login form to match 3rd-party Auth API requirements with client-side form validation. Wrote the `README.md`. Helped in fully completing the single book view page.
+- **Lwazi M Mabota** – Developed a form to allow users to change their password, matching the server-side requirements. Helped in fully completing the single book view page.
+- **Thomas Le** – Wrote a page/view to allow user to view a single book.
+- **Owen Orlic** – Developed a page/view to allow users to view a list of books. Helped in fully completing the single book view page.
+
+### Meetings
+
+- **Friday, May 19 (10:30 AM - 11:00 AM)** - Discord Voice Chat
+    - Briefly discussed how we will divide the work on what pages and features each person should work on. (Fully fleshed out this sprint's contribution when the beta I assignment description came out.) 
+- **Sunday, May 25 (5:30 PM - 6:30 PM)** - Discord Voice Chat
+    - Merge all code together to the beta I sprint. Discuss how to connect the 3rd-party web API to the change password, single book page, and list of books page. Discussed for the future on how we plan to implement the search bar feature with the 3rd-party web API.
+
+### Comments
+
+- Since some of us were writing frontend code in Next.js for the first time, understanding how the framework uses directories for pages and routes was a bit confusing.
