@@ -8,10 +8,14 @@
   "full-page": "Full Page Example",
   "maintenance": "Maintenance",
   "messages": "Messages",
+  "books": "Books",
+  "view-books": "View Books",
   "others": "Others",
   "pages": "Pages",
   "sample-page": "Sample Page",
   "send-message": "Send Message",
   "under-construction": "Under Construction",
-  "view-messages": "View Messages"
+  "view-messages": "View Messages",
+  "account": "Account",
+  "change-password": "Change Password"
 }
