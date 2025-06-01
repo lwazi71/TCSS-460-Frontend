@@ -28,7 +28,7 @@ export function BookListItem({ book, onDelete }: { book: IBook; onDelete: (isbn1
   );
 }
 
-export function NoMessage() {
+export function NoBook() {
   return (
     <ListItem>
       <ListItemAvatar>
