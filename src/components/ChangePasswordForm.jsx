@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ChangePasswordPage from '../components/ChangePasswordPage';
+
 
 const ChangePasswordPage = () => {
   const [formData, setFormData] = useState({
@@ -38,20 +38,22 @@ const ChangePasswordPage = () => {
 
     setLoading(true);
     try {
-      const response = await fetch('https://group8-tcss460-web-api-57308080b655.herokuapp.com/api/auth/change-password', {
+      const response = await fetch('https://group8-tcss460-web-api-57308080b655.herokuapp.com/change-password', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          Authorization: `Bearer ${localStorage.getItem('token')}`
         },
         body: JSON.stringify({
-          username: formData.userName,
           currentPassword: formData.currentPassword,
-          newPassword: formData.newPassword,
-        }),
+          newPassword: formData.newPassword
+        })
       });
+      const text = await response.text();
+      console.log('Response Text:', text); // <-- Log response body
+      if (!response.ok) throw new Error(`API Error ${response.status}: ${text}`);
 
-      const data = await response.json();
+      const data = JSON.parse(text); // only parse if it's valid
       if (!response.ok) throw new Error(data.message || 'Password change failed');
 
       setSuccess(true);

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, ChangeEvent, FormEvent } from 'react';
+import axios from '../../utils/axios'; 
 
 type FormData = {
   userName: string;
@@ -46,21 +47,10 @@ const ChangePasswordPage = () => {
 
     setLoading(true);
     try {
-      const response = await fetch('https://group8-tcss460-web-api-57308080b655.herokuapp.com/api/auth/change-password', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-        body: JSON.stringify({
-          username: formData.userName,
-          currentPassword: formData.currentPassword,
-          newPassword: formData.newPassword
-        })
+      await axios.put('/change-password', {
+        currentPassword: formData.currentPassword,
+        newPassword: formData.newPassword
       });
-
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.message || 'Password change failed');
 
       setSuccess(true);
       setFormData({
@@ -71,18 +61,19 @@ const ChangePasswordPage = () => {
       });
       setErrors({});
     } catch (err: any) {
-      setErrors({ global: err.message });
+      setErrors({ global: err.response?.data?.message || 'Password change failed' });
     } finally {
       setLoading(false);
     }
   };
+
   return (
     <main className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 p-4">
       <div className="w-full max-w-lg bg-white rounded-2xl shadow-2xl p-10 border border-gray-200">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">🔐 Change Password</h1>
 
         {loading && <p className="text-blue-500 text-center mb-4">Updating password...</p>}
-        {success && <p className="text-green-600 text-center mb-4"> Password updated successfully!</p>}
+        {success && <p className="text-green-600 text-center mb-4">✅ Password updated successfully!</p>}
         {errors.global && <p className="text-red-500 text-center mb-4">❌ {errors.global}</p>}
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -100,10 +91,10 @@ const ChangePasswordPage = () => {
                   field === 'userName'
                     ? 'Enter your username'
                     : field === 'currentPassword'
-                      ? 'Current password'
-                      : field === 'newPassword'
-                        ? 'New password'
-                        : 'Confirm password'
+                    ? 'Current password'
+                    : field === 'newPassword'
+                    ? 'New password'
+                    : 'Confirm password'
                 }
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none bg-gray-50 text-gray-800"
               />
