@@ -13,7 +13,7 @@ import { Divider, List } from '@mui/material';
 // project import
 import axios from 'utils/axios';
 import { IBook } from 'types/book';
-import { NoMessage, BookListItem } from 'components/BookListItem';
+import { NoBook, BookListItem } from 'components/BookListItem';
 
 const defaultTheme = createTheme();
 
@@ -193,7 +193,7 @@ export default function BooksList() {
             View Books
           </Typography>
           <Box sx={{ mt: 1 }}>
-            <List>{booksAsComponents.length ? booksAsComponents : <NoMessage />}</List>
+            <List>{booksAsComponents.length ? booksAsComponents : <NoBook />}</List>
           </Box>
         </Box>
       </Container>
