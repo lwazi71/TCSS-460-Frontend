@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChangePasswordPage from '../components/ChangePasswordPage';
 
 const ChangePasswordPage = () => {
   const [formData, setFormData] = useState({
