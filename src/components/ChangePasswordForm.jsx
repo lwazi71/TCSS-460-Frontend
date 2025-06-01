@@ -50,10 +50,10 @@ const ChangePasswordPage = () => {
         })
       });
       const text = await response.text();
-      console.log('Response Text:', text); // <-- Log response body
+      console.log('Response Text:', text); 
       if (!response.ok) throw new Error(`API Error ${response.status}: ${text}`);
 
-      const data = JSON.parse(text); // only parse if it's valid
+      const data = JSON.parse(text); 
       if (!response.ok) throw new Error(data.message || 'Password change failed');
 
       setSuccess(true);
