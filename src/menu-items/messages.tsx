@@ -8,13 +8,13 @@ import SendIcon from '@mui/icons-material/Send';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import SearchIcon from '@mui/icons-material/Search';
 
 // type
 import { NavItemType } from 'types/menu';
 
 // icons
-const icons = { MessageOutlined, EmailIcon, SendIcon, MenuBookIcon, LibraryBooksIcon, VpnKeyIcon };
-
+const icons = { MessageOutlined, EmailIcon, SendIcon, MenuBookIcon, LibraryBooksIcon, VpnKeyIcon, SearchIcon };
 
 // ==============================|| MENU ITEMS - PAGES ||============================== //
 
@@ -59,6 +59,13 @@ const pages: NavItemType = {
           icon: icons.LibraryBooksIcon
         },
         {
+          id: 'search-books',
+          title: <FormattedMessage id="search-books" />,
+          type: 'item',
+          url: '/books/search',
+          icon: icons.SearchIcon
+        },
+        {
           id: 'create-book',
           title: <FormattedMessage id="create-book" />,
           type: 'item',
@@ -79,7 +86,6 @@ const pages: NavItemType = {
           type: 'item',
           url: '/change-password',
           icon: icons.VpnKeyIcon
-
         }
       ]
     }
