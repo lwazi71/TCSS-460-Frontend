@@ -43,3 +43,23 @@
 ### Comments
 
 - Since some of us were writing frontend code in Next.js for the first time, understanding how the framework uses directories for pages and routes was a bit confusing.
+
+## Beta II Sprint
+
+### Contribution
+
+- **Jacob Klymenko** – Developed the view/page to create a new book with a connection to the 3rd party web api (ongoing issue with invalid token error). Wrote the `README.md` for beta II sprint. 
+- **Lwazi M Mabota** – Connected the change password view/page form to the 3rd party web API.
+- **Thomas Le** – Complete the single book page with connection to 3rd party web API with the correct expected response object and with ability to update book information.
+- **Owen Orlic** – Connected the page/view of all books with the ability for users to search for books with the 3rd party web API's different search methods.
+
+### Meetings
+
+- **Tuesday, May 27 (10:30 AM - 11:00 AM)** - Discord Voice Chat
+    - Discussed the delegation of tasks for the sprint. Mostly everyone understood that we were to connect the preview views/pages to the 3rd party web API and write some new views/pages. 
+- **Sunday, May 25 (5:00 PM - 6:00 PM)** - Discord Voice Chat
+    - Merge all code together to the beta II sprint. Discuss potential changes that should be made to the work that we have done. Discuss the occuring error we are having with invalid tokens when attempting to create or update information in the 3rd party web API.
+
+### Comments
+
+- Jacob and Lwazi were both having issues with token related errors obstructing the ability to make web API calls. We will have to look into the frontend authentication code to find how the tokens are being stored and/or if there are any changes that need to be made.
