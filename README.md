@@ -57,9 +57,10 @@
 
 - **Tuesday, May 27 (10:30 AM - 11:00 AM)** - Discord Voice Chat
     - Discussed the delegation of tasks for the sprint. Mostly everyone understood that we were to connect the preview views/pages to the 3rd party web API and write some new views/pages. 
-- **Sunday, May 25 (5:00 PM - 6:00 PM)** - Discord Voice Chat
+- **Sunday, June 1 (5:00 PM - 6:00 PM)** - Discord Voice Chat
     - Merge all code together to the beta II sprint. Discuss potential changes that should be made to the work that we have done. Discuss the occuring error we are having with invalid tokens when attempting to create or update information in the 3rd party web API.
 
 ### Comments
 
 - Jacob and Lwazi were both having issues with token related errors obstructing the ability to make web API calls. We will have to look into the frontend authentication code to find how the tokens are being stored and/or if there are any changes that need to be made.
+- Owen had confusion on whether search should lead to the View Books page or have books pop up on the Search page. Decided on having the books pop up on the Search page itself
