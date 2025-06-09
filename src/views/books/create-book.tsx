@@ -37,7 +37,7 @@ export default function CreateBook() {
         image_small_url: ''
     });
     const [alert, setAlert] = React.useState<IAlert>(EMPTY_ALERT);
-    const router = useRouter();
+    // const router = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
