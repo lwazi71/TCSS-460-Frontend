@@ -69,9 +69,9 @@
 
 ### Contribution
 
-    - **Jacob Klymenko** – Worked in meeting with other group members to fix final bugs. Fixed single book page to properly display information.
-    - **Lwazi M Mabota** – Worked in meeting with other group members to fix final bugs.
-    - **Owen Orlic** – Worked in meeting with other group members to fix final bugs.
+- **Jacob Klymenko** – Worked in meeting with other group members to fix final bugs. Fixed single book page to properly display information.
+- **Lwazi M Mabota** – Worked in meeting with other group members to fix final bugs.
+- **Owen Orlic** – Worked in meeting with other group members to fix final bugs.
 
 ### Meetings
 
@@ -79,4 +79,4 @@
     - Wrapped up remaining tasks to complete the project's front end. This included being able to view a single book which is reachable from the search. Had to do some redesigning on the single book page to properly read book info.
 
 ### Comments
-    - We had to ask the backend to give us the book ID through the search/filter/pagination route so then we can use their get book by ID route. 
+- We had to ask the backend to give us the book ID through the search/filter/pagination route so then we can use their get book by ID route. 
