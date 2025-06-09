@@ -15,6 +15,8 @@ import { Divider, List } from '@mui/material';
 //project imports
 import SearchBook from 'sections/books/bookSearch';
 import { IBook } from 'types/book';
+type IBookWithId = IBook & { book_id: string };
+
 import { BookListItem, NoBook } from 'components/BookListItem';
 
 const defaultTheme = createTheme();
@@ -27,9 +29,9 @@ const EMPTY_ALERT = {
 
 export default function BookSearch() {
   const [alert, setAlert] = useState(EMPTY_ALERT);
-  const [results, setResults] = useState<IBook[]>([]);
+  const [results, setResults] = useState<IBookWithId[]>([]);
 
-  const onSuccess = (books: IBook[], message: string) => {
+  const onSuccess = (books: IBookWithId[], message: string) => {
     setResults(books);
     setAlert({
       showAlert: true,
@@ -75,7 +77,10 @@ export default function BookSearch() {
           </Typography>
 
           <Box sx={{ mt: 3, width: '100%' }}>
-            <SearchBook onSuccess={onSuccess} onError={onError} />
+            <SearchBook
+              onSuccess={(books, message) => onSuccess(books as IBookWithId[], message)}
+              onError={onError}
+            />
           </Box>
 
           <Box sx={{ mt: 4, width: '100%' }}>

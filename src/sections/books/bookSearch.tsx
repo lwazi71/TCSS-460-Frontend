@@ -63,8 +63,14 @@ export default function SearchBook({
                   submit: null
                 }
               });
-              console.log(response.data.message);
-              onSuccess(response.data.data || [], response.data.message); //send the books
+              console.log('BOOKSEARCH - ', response.data.data);
+
+              const booksWithId = (response.data.data || []).map((book: IBook) => ({
+                ...book,
+                book_id: book.id
+              }));
+
+              onSuccess(booksWithId, response.data.message);
             })
             .catch((error) => {
               console.log(error.response?.message);

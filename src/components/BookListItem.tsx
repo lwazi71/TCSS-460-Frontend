@@ -1,12 +1,22 @@
 import DeleteIcon from '@mui/icons-material/Delete';
 import CommentsDisabledIcon from '@mui/icons-material/CommentsDisabled';
-import { IconButton, ListItem, ListItemAvatar, ListItemText, Avatar } from '@mui/material';
+import { IconButton, ListItem, ListItemAvatar, ListItemText, Avatar, Typography } from '@mui/material';
+import { useRouter } from 'next/navigation';
 
 // project import
 import { IBook } from 'types/book';
+type IBookWithId = IBook & { book_id: string };
+
 // import PriorityAvatar from 'components/Priority';
 
-export function BookListItem({ book, onDelete }: { book: IBook; onDelete: (isbn13: number) => void }) {
+export function BookListItem({ book, onDelete }: { book: IBookWithId; onDelete: (isbn13: number) => void }) {
+  const router = useRouter();
+
+  const handleTitleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    router.push(`/book/${book.book_id}`);
+  };
+
   return (
     <ListItem
       sx={{ minWidth: '500px' }}
@@ -23,7 +33,26 @@ export function BookListItem({ book, onDelete }: { book: IBook; onDelete: (isbn1
           sx={{ width: 48, height: 72 }}
         />
       </ListItemAvatar>
-      <ListItemText primary={book.title} secondary={book.authors} secondaryTypographyProps={{ color: 'gray' }} />
+      {/* <ListItemText primary={book.title} secondary={book.authors} secondaryTypographyProps={{ color: 'gray' }} /> */}
+      <ListItemText
+        primary={
+          <Typography
+            onClick={handleTitleClick}
+            sx={{
+              cursor: 'pointer',
+              color: 'primary.main',
+              textDecoration: 'underline',
+              '&:hover': {
+                color: 'primary.dark'
+              }
+            }}
+          >
+            {book.title}
+          </Typography>
+        }
+        secondary={book.authors}
+        secondaryTypographyProps={{ color: 'gray' }}
+      />
     </ListItem>
   );
 }

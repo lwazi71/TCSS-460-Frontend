@@ -13,12 +13,15 @@ import { Divider, List } from '@mui/material';
 // project import
 import axios from 'utils/axios';
 import { IBook } from 'types/book';
+type IBookWithId = IBook & { book_id: string };
+
 import { NoBook, BookListItem } from 'components/BookListItem';
 
 const defaultTheme = createTheme();
 
-const mockBooks: IBook[] = [
+const mockBooks: IBookWithId[] = [
   {
+    book_id: '1',
     isbn13: 9999999999,
     authors: 'J.K. Rowling, Mary GrandPré',
     publication: 1985,
@@ -39,6 +42,7 @@ const mockBooks: IBook[] = [
     }
   },
   {
+    book_id: '2',
     isbn13: 9999999998,
     authors: 'Suzanne Collins',
     publication: 1985,
@@ -59,6 +63,7 @@ const mockBooks: IBook[] = [
     }
   },
   {
+    book_id: '3',
     isbn13: 9999999997,
     authors: 'Stephenie Meyer',
     publication: 1985,
@@ -79,6 +84,7 @@ const mockBooks: IBook[] = [
     }
   },
   {
+    book_id: '4',
     isbn13: 9999999996,
     authors: 'Harper Lee',
     publication: 1985,
@@ -99,6 +105,7 @@ const mockBooks: IBook[] = [
     }
   },
   {
+    book_id: '5',
     isbn13: 9999999995,
     authors: 'F. Scott Fitzgerald',
     publication: 1985,
@@ -119,6 +126,7 @@ const mockBooks: IBook[] = [
     }
   },
   {
+    book_id: '6',
     isbn13: 9999999994,
     authors: 'John Green',
     publication: 1985,
@@ -141,7 +149,7 @@ const mockBooks: IBook[] = [
 ];
 
 export default function BooksList() {
-  const [books, setBooks] = React.useState<IBook[]>([]);
+  const [books, setBooks] = React.useState<IBookWithId[]>([]);
 
   React.useEffect(() => {
     // Always use mockBooks for now
