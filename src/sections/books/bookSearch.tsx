@@ -67,7 +67,7 @@ export default function SearchBook({
 
               const booksWithId = (response.data.data || []).map((book: IBook) => ({
                 ...book,
-                book_id: book.id
+                book_id: (book as any).id
               }));
 
               onSuccess(booksWithId, response.data.message);
