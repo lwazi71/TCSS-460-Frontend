@@ -63,4 +63,20 @@
 ### Comments
 
 - Jacob and Lwazi were both having issues with token related errors obstructing the ability to make web API calls. We will have to look into the frontend authentication code to find how the tokens are being stored and/or if there are any changes that need to be made.
-- Owen had confusion on whether search should lead to the View Books page or have books pop up on the Search page. Decided on having the books pop up on the Search page itself
+- Owen had confusion on whether search should lead to the View Books page or have books pop up on the Search page. Decided on having the books pop up on the Search page itself.
+
+## Final Production Sprint
+
+### Contribution
+
+    - **Jacob Klymenko** – Worked in meeting with other group members to fix final bugs. Fixed single book page to properly display information.
+    - **Lwazi M Mabota** – Worked in meeting with other group members to fix final bugs.
+    - **Owen Orlic** – Worked in meeting with other group members to fix final bugs.
+
+### Meetings
+
+- **Sunday, June 8 (5:00 PM - 0:00 PM)** - Discord Voice Chat
+    - Wrapped up remaining tasks to complete the project's front end. This included being able to view a single book which is reachable from the search. Had to do some redesigning on the single book page to properly read book info.
+
+### Comments
+    - We had to ask the backend to give us the book ID through the search/filter/pagination route so then we can use their get book by ID route. 
