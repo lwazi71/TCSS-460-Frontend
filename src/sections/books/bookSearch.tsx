@@ -19,7 +19,12 @@ import { Formik } from 'formik';
 // project import
 import AnimateButton from 'components/@extended/AnimateButton';
 import { IBook } from 'types/book';
+
 import axios from 'utils/axios';
+
+interface IBookWithId extends IBook {
+  book_id: number;
+}
 
 export default function SearchBook({
   onSuccess,
@@ -65,9 +70,9 @@ export default function SearchBook({
               });
               console.log('BOOKSEARCH - ', response.data.data);
 
-              const booksWithId = (response.data.data || []).map((book: IBook) => ({
+              const booksWithId: IBookWithId[] = (response.data.data || []).map((book: any) => ({
                 ...book,
-                book_id: (book as any).id
+                book_id: (book as { id: number }).id,
               }));
 
               onSuccess(booksWithId, response.data.message);
