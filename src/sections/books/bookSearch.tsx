@@ -50,7 +50,7 @@ export default function SearchBook({
         isbn13: Yup.string()
       })}
       onSubmit={(values, { setErrors, setSubmitting, resetForm }) => {
-        const page = 1;
+        const page = 0;
         const limit = 25;
         onSearchValuesSet(values);
         const urlExt = getURLExt(values, page, limit);

@@ -64,6 +64,7 @@ export default function BookSearch() {
       .get('c/book?' + params.toString())
       .then((res) => {
         const books = res.data.data.map((book: any) => ({ ...book, book_id: book.id }));
+
         setResults(books);
         setPage(pageNumber);
 
@@ -125,11 +126,11 @@ export default function BookSearch() {
             {searchPerformed && (
               <Box sx={{ mt: 2 }}>
                 <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
-                  <Button variant="contained" onClick={handlePrev} disabled={page === 1}>
+                  <Button variant="contained" onClick={handlePrev} disabled={page <= 1}>
                     Previous
                   </Button>
                   <Typography variant="body1">Page {page}</Typography>
-                  <Button variant="contained" onClick={handleNext} disabled={page === totalPages}>
+                  <Button variant="contained" onClick={handleNext} disabled={page >= totalPages}>
                     Next
                   </Button>
                 </Stack>
